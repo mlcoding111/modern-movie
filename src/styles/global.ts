@@ -1,0 +1,37 @@
+import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+:root{
+    --primary-color: #22254b;
+    --secondary-color: #373b69;
+}
+
+body{
+    margin: 0;
+    background-color: var(--primary-color);
+    font-family: 'Poppins';
+}
+
+.App{
+    min-height: 100vh;
+}
+
+`
+export const Container = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    border: 1px solid blue;
+    width: 90%;
+`;

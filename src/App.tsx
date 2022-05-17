@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { Colors } from './utils/variables';
+import NavBar from './containers/NavBar';
 
-function App() {
+import { Movie } from './components/Movie';
+import { Layout } from './components/Layout';
+import { Container } from'./styles/global'
+
+const App:FC = () => {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar/>
+
+      <Layout>
+        <Container>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+          <Movie/>
+        </Container>        
+      </Layout>
+
     </div>
   );
 }
