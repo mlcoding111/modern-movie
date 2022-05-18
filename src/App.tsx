@@ -3,7 +3,7 @@ import { Colors } from './utils/variables';
 import NavBar from './containers/NavBar';
 
 import { Movie } from './components/Movie';
-import { Layout } from './components/Layout';
+import { Layout } from './containers/Layout';
 import { Container } from'./styles/global'
 
 import MovieService from './services/MovieService';
