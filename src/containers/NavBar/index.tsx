@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { Navbar as Nav } from './styles'
+
 type Props = {
     age?: number
 }
