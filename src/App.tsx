@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Colors } from './utils/variables';
 import NavBar from './containers/NavBar';
 
 import { Movie } from './components/Movie';
