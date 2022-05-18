@@ -1,29 +1,30 @@
 import React, { FC } from 'react'
 import { MovieCard } from './styles';
-import { Container } from'../../styles/global'
+import { IMG_URL } from '../../utils/variables'
 
 // Interface to make props reliable on the test.tsx
 
 interface Props{
     rating?: number,
     title?: string,
-    imgSrc?: string
+    imgSrc?: string,
+    overview?: string
 }
 
-export const Movie:FC <Props> = ({rating, title, imgSrc}) => {
+export const Movie:FC <Props> = ({rating, title, imgSrc, overview}) => {
   return (
     <>
       <MovieCard>
-        <img src="https://picsum.photos/1280/720" alt="image"/ >
+        <img src={IMG_URL + imgSrc} alt="image"/ >
           
         <div className="movie-info">
-            <h3>Title</h3>
-            <span className="green">9.8</span>
+            <h3>{title}</h3>
+            <span className="green">{rating}</span>
         </div>
 
         <div className="overview">
             <h3>Overview</h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis nisi est deserunt minus voluptatum fugiat sit recusandae ab eaque alias?
+            {overview}
         </div>
       </MovieCard>
     </>
