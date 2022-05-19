@@ -5,14 +5,14 @@ import { Movie } from './components/Movie';
 import { Layout } from './containers/Layout';
 import { Container } from'./styles/global'
 
-import MovieService from './services/MovieService';
+import MediaService from './services/MediaService';
 
 const App:FC = () => {
 
   const [data, setData] = React.useState<any[]>([])
 
   React.useEffect(()=>{
-    MovieService.getAll().then((res : any) => {
+    MediaService.getGenre().then((res : any) => {
       setData(res.data.results)
       console.log(res.data.results)
     })
@@ -25,7 +25,7 @@ const App:FC = () => {
 
       <Layout>
         <Container>
-          {data.map((item, index) => (
+          {data && data.map((item, index) => (
              <Movie rating={item.vote_average}
                     title={item.title}
                     imgSrc={item.poster_path}
