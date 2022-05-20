@@ -6,6 +6,7 @@ import { Layout } from './containers/Layout';
 import { Container } from'./styles/global'
 
 import MediaService from './services/MediaService';
+import { CategorySelector } from './components/CategorySelector';
 
 const App:FC = () => {
 
@@ -24,13 +25,13 @@ const App:FC = () => {
       <NavBar/>
 
       <Layout>
+        <CategorySelector />
         <Container>
           {data && data.map((item, index) => (
              <Movie rating={item.vote_average}
                     title={item.title}
                     imgSrc={item.poster_path}
                     overview={item.overview}
-
               />
           ))}
         </Container>        
