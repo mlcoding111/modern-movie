@@ -6,7 +6,8 @@ import { Layout } from './containers/Layout';
 import { Container } from'./styles/global'
 
 import MediaService from './services/MediaService';
-import { CategorySelector } from './components/CategorySelector';
+import { TypeSelector } from './components/TypeSelector';
+import { GenreSelector } from './components/GenreSelector';
 
 const App:FC = () => {
 
@@ -25,7 +26,8 @@ const App:FC = () => {
       <NavBar/>
 
       <Layout>
-        <CategorySelector />
+        <TypeSelector />
+        <GenreSelector />
         <Container>
           {data && data.map((item, index) => (
              <Movie rating={item.vote_average}

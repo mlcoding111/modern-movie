@@ -8,7 +8,8 @@ export const Selector = styled.div`
     display: block;
     width: 100%;
     max-width: 13em;
-    margin: 2em auto;
+    margin: 0em auto;
+    margin-top: 2em;
     height: 2.5em;
     font-size: 10pt;
     border-radius: 50px;

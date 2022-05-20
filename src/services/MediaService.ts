@@ -9,7 +9,7 @@ interface Genre {
 }
 
 // Media genres list
-const genres = [
+export const genres = [
     {
         name: 'Horror',
         id: 27
