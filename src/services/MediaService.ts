@@ -35,6 +35,33 @@ export const genres = [
     },
 ]
 
+export const serieGenres = [
+    {
+        name: 'Action',
+        id: 10759
+    },
+    {
+        name: 'Comedy',
+        id: 35
+    },
+    {
+        name: 'Drama',
+        id: 18
+    },
+    {
+        name: 'Romance',
+        id: 10749
+    },
+    {
+        name: 'Science Fiction',
+        id: 10765
+    },
+    {
+        name: 'Animation',
+        id: 16
+    },
+]
+
 // Utility function
 const getGenresList = () => {
     return http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=718a67010bce29d32d4511151ce18484&language=en-US`)
