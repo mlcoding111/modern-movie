@@ -4,7 +4,7 @@ import { Button, Selector } from './styles'
 import { genres } from '../../services/MediaService'
 
 type Props = {
-  handleGenreChange: (text: string) => void;
+  handleGenreChange: (genre: string) => void;
 }
 
 export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
@@ -15,7 +15,7 @@ export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
     genres.forEach(genre => {
       genre.name === innerText ? document.getElementById(innerText)?.classList.add("active") : document.getElementById(genre.name)?.classList.remove("active")
     })
-
+    console.log(innerText)
     handleGenreChange(innerText);
   }
 

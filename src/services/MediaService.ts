@@ -3,11 +3,6 @@ import Movie from '../types/Movie'
 
 import { API_KEY } from "../utils/variables";
 
-interface Genre {
-    id: number;
-    name: string;
-}
-
 // Media genres list
 export const genres = [
     {
@@ -56,7 +51,6 @@ const trending = (type : string) => {
 const genre = (type : string, genre : string) => {
     // Filter the genresList to get the ID from the name
     let [ele] = genres.filter(element => element.name === genre)
-
     return `/discover/${type}/?${API_KEY}&with_genres=${ele.id}`
 }
 
@@ -74,8 +68,8 @@ const getTrending = () => {
     return http.get(trending('movie') + API_KEY);
 }
 
-const getGenre = () => {
-    return http.get(genre('movie', 'Science Fiction'));
+const getGenre = (mediaType : string, genreName : string) => {
+    return http.get(genre(mediaType, genreName));
 }
 
 const MediaService = {

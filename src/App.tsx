@@ -12,17 +12,28 @@ import { GenreSelector } from './components/GenreSelector';
 const App:FC = () => {
 
   const [data, setData] = React.useState<any[]>([])
-  const [genre, setGenre] = React.useState<string>()
+  const [genre, setGenre] = React.useState<string>('action')
+  const [type, setType] = React.useState<string>('movie')
 
   React.useEffect(()=>{
-    MediaService.getGenre().then((res : any) => {
+    MediaService.getGenre('movie', 'Horror').then((res : any) => {
       setData(res.data.results)
       console.log(res.data.results)
     })
   }, [])
 
-  const handleGenreChange = (genre: string) => {
-    setGenre(genre);
+  const handleGenreChange = (genreName : string) => {
+    setGenre(genreName)
+    MediaService.getGenre(type, genreName).then((res : any) => {
+      setData(res.data.results)
+    })
+  }
+
+  const handleTypeChange = (typeName: string) => {
+    setType(typeName)
+    MediaService.getGenre(typeName, genre).then((res : any) => {
+      setData(res.data.results)
+    })
   }
 
 
@@ -31,7 +42,7 @@ const App:FC = () => {
       <NavBar/>
 
       <Layout>
-        <TypeSelector />
+        <TypeSelector handleTypeChange={handleTypeChange}/>
         <GenreSelector handleGenreChange={handleGenreChange}/>
         <Container>
           {data && data.map((item, index) => (
