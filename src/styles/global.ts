@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
     --secondary-color: #373b69;
 }
 
+.active{
+    background: #e08217;
+}
+
 body{
     margin: 0;
     background-color: var(--primary-color);

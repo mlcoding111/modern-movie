@@ -11,6 +11,7 @@ export const Selector = styled.nav`
        display: flex;
        justify-content: space-between; 
        list-style: none;
+       flex-wrap: wrap;
    }
 
    li{
@@ -37,4 +38,5 @@ export const Button = styled.button`
         background: #e08217;
         cursor: pointer;
     }
+
 `

@@ -12,6 +12,7 @@ import { GenreSelector } from './components/GenreSelector';
 const App:FC = () => {
 
   const [data, setData] = React.useState<any[]>([])
+  const [genre, setGenre] = React.useState<string>()
 
   React.useEffect(()=>{
     MediaService.getGenre().then((res : any) => {
@@ -20,6 +21,10 @@ const App:FC = () => {
     })
   }, [])
 
+  const handleGenreChange = (genre: string) => {
+    setGenre(genre);
+  }
+
 
   return (
     <div className="App">
@@ -27,7 +32,7 @@ const App:FC = () => {
 
       <Layout>
         <TypeSelector />
-        <GenreSelector />
+        <GenreSelector handleGenreChange={handleGenreChange}/>
         <Container>
           {data && data.map((item, index) => (
              <Movie rating={item.vote_average}
