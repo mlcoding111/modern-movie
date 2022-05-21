@@ -2,6 +2,7 @@ import React, {FC} from 'react'
 import { Button, Selector } from './styles'
 
 import { genres } from '../../services/MediaService'
+import { serieGenres } from '../../services/MediaService'
 
 type Props = {
   handleGenreChange: (genre: string) => void;
@@ -18,7 +19,6 @@ export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
     console.log(innerText)
     handleGenreChange(innerText);
   }
-
 
   return (
     <Selector>

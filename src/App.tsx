@@ -15,6 +15,7 @@ const App:FC = () => {
   const [genre, setGenre] = React.useState<string>('action')
   const [type, setType] = React.useState<string>('movie')
 
+  // Initialize default data
   React.useEffect(()=>{
     MediaService.getGenre('movie', 'Horror').then((res : any) => {
       setData(res.data.results)
@@ -22,6 +23,7 @@ const App:FC = () => {
     })
   }, [])
 
+  // Fetch the api for the genre selected by the user and update the data
   const handleGenreChange = (genreName : string) => {
     setGenre(genreName)
     MediaService.getGenre(type, genreName).then((res : any) => {
@@ -29,6 +31,7 @@ const App:FC = () => {
     })
   }
 
+  // Fetch the api for the type selected by the user and update the data
   const handleTypeChange = (typeName: string) => {
     setType(typeName)
     MediaService.getGenre(typeName, genre).then((res : any) => {
