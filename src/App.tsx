@@ -19,7 +19,6 @@ const App:FC = () => {
   React.useEffect(()=>{
     MediaService.getGenre('movie', 'Horror').then((res : any) => {
       setData(res.data.results)
-      console.log(res.data.results)
     })
   }, [])
 
@@ -53,6 +52,7 @@ const App:FC = () => {
                     title={item.title}
                     imgSrc={item.poster_path}
                     overview={item.overview}
+                    key={index}
               />
           ))}
         </Container>        

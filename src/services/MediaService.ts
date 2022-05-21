@@ -63,9 +63,17 @@ export const serieGenres = [
 ]
 
 // Utility function
-const getGenresList = () => {
-    return http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=718a67010bce29d32d4511151ce18484&language=en-US`)
+
+const getGenresList = (type : string) => {
+    return http.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=718a67010bce29d32d4511151ce18484&language=en-US`)
 }
+
+const genre = (type : string, genre : string) => {
+    // Filter the genresList to get the ID from the name
+    let [ele] = genres.filter(element => element.name === genre)
+    return `/discover/${type}/?${API_KEY}&with_genres=${ele.id}`
+}
+
 
 const popular = (type : string) => {
     return `/discover/${type}?sort_by=popularity.desc&`
@@ -75,13 +83,7 @@ const trending = (type : string) => {
     return `/trending/${type}/week`
 }
 
-const genre = (type : string, genre : string) => {
-    // Filter the genresList to get the ID from the name
-    let [ele] = genres.filter(element => element.name === genre)
-    return `/discover/${type}/?${API_KEY}&with_genres=${ele.id}`
-}
-
-// Api get requests
+// Api get requests 
 
 const getAll = () => {
     return http.get(popular('tv') + API_KEY);

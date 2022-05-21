@@ -24,7 +24,7 @@ export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
     <Selector>
       <ul>
         {genres && genres.map((element, index) => (
-          <li><Button onClick={handleClick} id={`${element.name}`} >{element.name}</Button></li>
+          <li key={index}><Button onClick={handleClick} id={`${element.name}`} >{element.name}</Button></li>
         ))}
       </ul>
     </Selector>
