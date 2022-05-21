@@ -64,8 +64,9 @@ export const serieGenres = [
 
 // Utility function
 
-const getGenresList = (type : string) => {
-    return http.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=718a67010bce29d32d4511151ce18484&language=en-US`)
+const getGenresList = async (type : string) => {
+    const {data} = await http.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=718a67010bce29d32d4511151ce18484&language=en-US`)
+    return data.genres
 }
 
 const genre = (type : string, genre : string) => {
@@ -74,6 +75,16 @@ const genre = (type : string, genre : string) => {
     return `/discover/${type}/?${API_KEY}&with_genres=${ele.id}`
 }
 
+
+const getGenre = async (mediaType : string, genreName : string) => {
+    const data = await getGenresList('tv')
+    return http.get(genre(mediaType, genreName));
+}
+
+// const getGenre = (mediaType : string, genreName : string) => {
+    
+//     return http.get(genre(mediaType, genreName));
+// }
 
 const popular = (type : string) => {
     return `/discover/${type}?sort_by=popularity.desc&`
@@ -97,9 +108,6 @@ const getTrending = () => {
     return http.get(trending('movie') + API_KEY);
 }
 
-const getGenre = (mediaType : string, genreName : string) => {
-    return http.get(genre(mediaType, genreName));
-}
 
 const MediaService = {
     getAll,
