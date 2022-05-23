@@ -9,22 +9,20 @@ export const Selector = styled.nav`
     margin: 0 auto;
    ul{
        display: flex;
-       justify-content: space-between; 
+       justify-content: center;
        list-style: none;
        flex-wrap: wrap;
+       margin-top: 1em;
    }
-
    li{
-       margin: 12px;
-       
+       margin: 0 .5em;
    }
-
 `
 
 export const Button = styled.button`
     display: block;
     padding: .5em 1.5em;
-    margin: 1em 0;
+    margin-top: 1em;
     /* background: #e08217;
     border: 1px solid #E8932F; */
     border: none;
