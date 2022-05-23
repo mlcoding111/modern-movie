@@ -10,6 +10,8 @@ export const TypeSelector:FC <Props> = ({handleTypeChange}) => {
 
   const handleClick = (e: any) => {
     const { id } = e.target;
+    console.log('type clicked')
+    
     handleTypeChange(id);
   }
   return (

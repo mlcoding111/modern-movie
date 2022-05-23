@@ -10,30 +10,29 @@ import { TypeSelector } from './components/TypeSelector';
 import { GenreSelector } from './components/GenreSelector';
 
 const App:FC = () => {
-
   const [data, setData] = React.useState<any[]>([])
-  const [genre, setGenre] = React.useState<string>('action')
+  const [genre, setGenre] = React.useState<string>('Action')
   const [type, setType] = React.useState<string>('movie')
+  const [genresList, setGenresList] = React.useState<{id: number, name: string}[]>([])
 
-  const [genresList, setGenresList] = React.useState<any[]>()
-
-  async function fetchGenres(){
-    const data = await MediaService.getGenresList('tv')
-    setGenresList(data)
+  async function fetchGenres(type : string){
+    const list = await MediaService.getGenresList(type)
+    setGenresList(list)
   }
+
   // Initialize default data
   React.useEffect(()=>{
-    MediaService.getGenre('movie', 'Horror').then((res : any) => {
+    fetchGenres(type)
+    MediaService.getPopular(type).then((res : any) => {
       setData(res.data.results)
-      fetchGenres()
     })
-
   }, [])
 
   // Fetch the api for the genre selected by the user and update the data
-  const handleGenreChange = (genreName : string) => {
+  const handleGenreChange = async (genreName : string) => {
     setGenre(genreName)
-    MediaService.getGenre(type, genreName).then((res : any) => {
+    fetchGenres(type)
+    MediaService.getGenre(type, genreName, genresList).then((res : any) => {
       setData(res.data.results)
     })
     // console.log(genresList)
@@ -42,9 +41,15 @@ const App:FC = () => {
   // Fetch the api for the type selected by the user and update the data
   const handleTypeChange = (typeName: string) => {
     setType(typeName)
-    MediaService.getGenre(typeName, genre).then((res : any) => {
+    MediaService.getPopular(type).then((res : any) => {
       setData(res.data.results)
     })
+    genresList.forEach(genre => {
+      console.log(genre)
+      document.getElementById(genre.name)?.classList.remove('active')
+      // genre.name === innerText ? document.getElementById(innerText)?.classList.add("active") : document.getElementById(genre.name)?.classList.remove("active")
+    })
+    fetchGenres(typeName)
   }
 
 
@@ -54,7 +59,7 @@ const App:FC = () => {
 
       <Layout>
         <TypeSelector handleTypeChange={handleTypeChange}/>
-        <GenreSelector handleGenreChange={handleGenreChange}/>
+        <GenreSelector handleGenreChange={handleGenreChange} genresList={genresList}/>
         <Container>
           {data && data.map((item, index) => (
              <Movie rating={item.vote_average}

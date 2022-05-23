@@ -5,15 +5,19 @@ import { genres } from '../../services/MediaService'
 import { serieGenres } from '../../services/MediaService'
 
 type Props = {
-  handleGenreChange: (genre: string) => void;
+  handleGenreChange: (genre: string) => void,
+  genresList : {
+    id: number,
+    name: string
+  }[]
 }
 
-export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
+export const GenreSelector:FC <Props> = ({handleGenreChange, genresList}) => {
 
   const handleClick = (e: any) => {
     const { innerText } = e.target;
 
-    genres.forEach(genre => {
+    genresList.forEach(genre => {
       genre.name === innerText ? document.getElementById(innerText)?.classList.add("active") : document.getElementById(genre.name)?.classList.remove("active")
     })
     console.log(innerText)
@@ -23,7 +27,7 @@ export const GenreSelector:FC <Props> = ({handleGenreChange}) => {
   return (
     <Selector>
       <ul>
-        {genres && genres.map((element, index) => (
+        {genresList && genresList.map((element, index) => (
           <li key={index}><Button onClick={handleClick} id={`${element.name}`} >{element.name}</Button></li>
         ))}
       </ul>
