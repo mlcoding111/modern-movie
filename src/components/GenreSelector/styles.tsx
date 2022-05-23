@@ -12,7 +12,7 @@ export const Selector = styled.nav`
        justify-content: center;
        list-style: none;
        flex-wrap: wrap;
-       margin-top: 1em;
+       margin: 1em 0;
    }
    li{
        margin: 0 .5em;

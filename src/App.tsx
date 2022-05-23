@@ -35,6 +35,7 @@ const App:FC = () => {
     MediaService.getGenre(type, genreName, genresList).then((res : any) => {
       setData(res.data.results)
     })
+    console.log(data)
     // console.log(genresList)
   }
 
@@ -63,7 +64,7 @@ const App:FC = () => {
         <Container>
           {data && data.map((item, index) => (
              <Movie rating={item.vote_average}
-                    title={item.title}
+                    title={item.title || item.original_title || item.name}
                     imgSrc={item.poster_path}
                     overview={item.overview}
                     key={index}
