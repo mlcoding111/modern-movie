@@ -19,16 +19,17 @@ export const MovieCard = styled.div`
     }
 
     .movie-info{
-    color: #eee;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem 1rem;
-    letter-spacing: 0.5px;
+        color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem 1rem;
+        letter-spacing: 0.5px;
     }
 
     h3{
         margin-top: 0;
+        font-weight: 700;
     }
 
     span{
@@ -60,6 +61,7 @@ export const MovieCard = styled.div`
         max-height: 100%;
         transform: translateY(101%);
         transition: transform 0.2s ease-in-out;
+        font-family: 'Poppins';
     }
 
     :hover .overview{
