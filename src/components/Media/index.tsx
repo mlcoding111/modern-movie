@@ -2,6 +2,8 @@ import React, { FC } from 'react'
 import { MovieCard } from './styles';
 import { IMG_URL } from '../../utils/variables'
 
+import { useNavigate } from 'react-router-dom'
+
 // Interface to make props reliable on the test.tsx
 
 interface Props{
@@ -14,9 +16,12 @@ interface Props{
 }
 
 export const Movie:FC <Props> = ({rating, title, imgSrc, overview, id, type}) => {
+  const navigate = useNavigate();
   return (
     <>
-      <MovieCard onClick={()=>console.log('click')}>
+      <MovieCard onClick={()=>{
+        navigate(`/media/${id}`)
+      }}>
         <img src={IMG_URL + imgSrc} alt="image"/ >
           
         <div className="movie-info">
