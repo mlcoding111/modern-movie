@@ -3,65 +3,6 @@ import Movie from '../types/Movie'
 
 import { API_KEY } from "../utils/variables";
 
-// Media genres list
-export const genres = [
-    {
-        name: 'Horror',
-        id: 27
-    },
-    {
-        name: 'Action',
-        id: 28
-    },
-    {
-        name: 'Comedy',
-        id: 35
-    },
-    {
-        name: 'Drama',
-        id: 18
-    },
-    {
-        name: 'Romance',
-        id: 10749
-    },
-    {
-        name: 'Science Fiction',
-        id: 878
-    },
-    {
-        name: 'Animation',
-        id: 16
-    },
-]
-
-export const serieGenres = [
-    {
-        name: 'Action',
-        id: 10759
-    },
-    {
-        name: 'Comedy',
-        id: 35
-    },
-    {
-        name: 'Drama',
-        id: 18
-    },
-    {
-        name: 'Romance',
-        id: 10749
-    },
-    {
-        name: 'Science Fiction',
-        id: 10765
-    },
-    {
-        name: 'Animation',
-        id: 16
-    },
-]
-
 type genresListType = {
     id: number,
     name: string
@@ -75,7 +16,6 @@ export const getGenresList = async (type : string) => {
 
 const genre = (type : string, genre : string, genresList: genresListType[]) => {
     // Filter the genresList to get the ID from the name
-    console.log({type, genres, genresList})
     let [ele] = genresList.filter(element => element.name === genre)
     return `/discover/${type}/?${API_KEY}&with_genres=${ele.id}`
 }
@@ -83,14 +23,8 @@ const genre = (type : string, genre : string, genresList: genresListType[]) => {
 
 const getGenre = async (mediaType : string, genreName : string, genresList: genresListType[]) => {
     // const data = await getGenresList('tv')
-    console.log({mediaType, genreName, genresList})
     return http.get(genre(mediaType, genreName, genresList));
 }
-
-// const getGenre = (mediaType : string, genreName : string) => {
-    
-//     return http.get(genre(mediaType, genreName));
-// }
 
 const popular = (type : string) => {
     return `/discover/${type}?sort_by=popularity.desc&`
@@ -113,7 +47,6 @@ const getPopular = (type: string) => {
 const getTrending = () => {
     return http.get(trending('movie') + API_KEY);
 }
-
 
 const MediaService = {
     getAll,
