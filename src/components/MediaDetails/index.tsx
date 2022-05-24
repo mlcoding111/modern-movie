@@ -23,11 +23,11 @@ export const MediaDetails:FC = () => {
 
   return (
     <MediaDetailsWrapper>
-
+      <button onClick={()=> console.log(data)}>Click me</button>
       <Grid>
         {/* Row */}
         <Row>
-          <h1>{data.original_title}</h1>
+          <h1>{data.original_title || data.name}</h1>
         </Row>
 
         {/* Row */}
