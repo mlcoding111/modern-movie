@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import NavBar from './containers/NavBar';
 
-import { Movie } from './components/Movie';
+import { Movie } from './components/Media';
 import { Layout } from './containers/Layout';
 import { Container } from'./styles/global'
 
