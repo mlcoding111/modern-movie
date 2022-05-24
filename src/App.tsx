@@ -15,6 +15,7 @@ const App:FC = () => {
   const [type, setType] = React.useState<string>('movie')
   const [genresList, setGenresList] = React.useState<{id: number, name: string}[]>([])
 
+  // Fetch the genres list for a given type : "Tv" or "Movie"
   async function fetchGenres(type : string){
     const list = await MediaService.getGenresList(type)
     setGenresList(list)
@@ -62,6 +63,7 @@ const App:FC = () => {
       <NavBar/>
 
       <Layout>
+
         <TypeSelector handleTypeChange={handleTypeChange}/>
         <GenreSelector handleGenreChange={handleGenreChange} genresList={genresList}/>
         <Container>
@@ -74,6 +76,7 @@ const App:FC = () => {
               />
           ))}
         </Container>        
+        
       </Layout>
 
     </div>
