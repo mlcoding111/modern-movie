@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
-
 *{
     margin: 0;
     padding: 0;
@@ -33,6 +31,26 @@ body{
 }
 
 `
+interface ColProps{
+    size: number
+}
+
+export const Grid = styled.div`
+    
+`
+export const Row = styled.div`
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    max-width: 65%;
+`
+
+export const Col = styled.div<ColProps>`
+    flex: ${(props) => props.size};
+    border: 2px solid blue;
+`
+
 export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;

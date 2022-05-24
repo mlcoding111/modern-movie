@@ -20,7 +20,7 @@ export const Movie:FC <Props> = ({rating, title, imgSrc, overview, id, type}) =>
   return (
     <>
       <MovieCard onClick={()=>{
-        navigate(`/media/${id}`)
+        navigate(`media/${type}/${title}/${id}`)
       }}>
         <img src={IMG_URL + imgSrc} alt="image"/ >
           

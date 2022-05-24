@@ -18,8 +18,8 @@ const App:FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
 
-              <Route path="media" >
-                <Route path=":id" element={<MediaDetails />} />                
+              <Route path="media">
+                <Route path=":type/:title/:id" element={<MediaDetails />} />                
               </Route>
               
             </Routes>
