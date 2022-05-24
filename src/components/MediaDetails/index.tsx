@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import {useParams} from 'react-router-dom'
 // Interface to make props reliable on the test.tsx
 
 interface Props{
@@ -9,9 +10,11 @@ interface Props{
 }
 
 export const MediaDetails:FC <Props> = () => {
+  const { id } = useParams();
+
   return (
     <>
-    
+    <h1>{id}</h1>
     </>
   )
 }
