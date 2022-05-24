@@ -59,10 +59,12 @@ export const MediaDetails:FC = () => {
         <Row id="related-list">
             <h2>Related</h2>     
         </Row>
+
         <Row>
           <p>Display recommended media here</p>
-          <Related />
+          <Related id={id}/>
         </Row>
+
       </Grid>      
     </MediaDetailsWrapper>
   )

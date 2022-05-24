@@ -3,7 +3,13 @@ import React, { FC } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-export const Related:FC = () => {
+import MediaService from '../../services/MediaService'
+
+type Props = {
+    id?: string
+}
+
+export const Related:FC <Props> = ({id}) => {
     const LIST = [
         "https://picsum.photos/200",
         "https://picsum.photos/200",

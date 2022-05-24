@@ -14,6 +14,10 @@ const mediaId = (type: string, id: string) => {
     return `/${type}/${id}?`
 }
 
+const similar = (type: string, id: string) => {
+    return `/${type}/${id}/similar`
+}
+
 const genre = (type : string, genre : string, genresList: genresListType[]) => {
     // Filter the genresList to get the ID from the name
     let [ele] = genresList.filter(element => element.name === genre)
@@ -52,12 +56,17 @@ const getById = (type: string, id: string) => {
     return http.get(mediaId(type, id) + API_KEY)
 }
 
+const getSimilar = (type: string, id : string) => {
+    return http.get(similar(type, id) + API_KEY)
+}
+
 const MediaService = {
     getPopular,
     getTrending,
     getGenre,
     getGenresList,
-    getById
+    getById,
+    getSimilar
 };
 
 export default MediaService;
