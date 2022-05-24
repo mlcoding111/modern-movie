@@ -67,6 +67,8 @@ const Home:FC = () => {
                     imgSrc={item.poster_path}
                     overview={item.overview}
                     key={index}
+                    id={item.id}
+                    type={type}
               />
           ))}
         </Container>      

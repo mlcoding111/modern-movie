@@ -8,13 +8,15 @@ interface Props{
     rating?: number,
     title?: string,
     imgSrc?: string,
-    overview?: string
+    overview?: string,
+    id: number,
+    type: string
 }
 
-export const Movie:FC <Props> = ({rating, title, imgSrc, overview}) => {
+export const Movie:FC <Props> = ({rating, title, imgSrc, overview, id, type}) => {
   return (
     <>
-      <MovieCard>
+      <MovieCard onClick={()=>console.log('click')}>
         <img src={IMG_URL + imgSrc} alt="image"/ >
           
         <div className="movie-info">
