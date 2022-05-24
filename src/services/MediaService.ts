@@ -15,7 +15,7 @@ const mediaId = (type: string, id: string) => {
 }
 
 const similar = (type: string, id: string) => {
-    return `/${type}/${id}/similar`
+    return `/${type}/${id}/similar?`
 }
 
 const genre = (type : string, genre : string, genresList: genresListType[]) => {

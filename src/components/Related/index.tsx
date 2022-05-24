@@ -6,10 +6,23 @@ import "react-multi-carousel/lib/styles.css";
 import MediaService from '../../services/MediaService'
 
 type Props = {
-    id?: string
+    type: string,
+    id: string
 }
 
-export const Related:FC <Props> = ({id}) => {
+export const Related:FC <Props> = ({type, id}) => {
+
+    const [data, setData] = React.useState()
+
+    const getData = async () => {
+        const data = await MediaService.getSimilar(type, id)
+        console.log(data)
+    }
+    React.useEffect(()=>{
+        getData()
+
+    }, [])
+
     const LIST = [
         "https://picsum.photos/200",
         "https://picsum.photos/200",
