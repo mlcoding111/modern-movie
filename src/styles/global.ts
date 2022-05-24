@@ -43,7 +43,7 @@ export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
     border: 1px solid red;
-    max-width: 65%;
+    max-width: 1170px;
 `
 
 export const Col = styled.div<ColProps>`
