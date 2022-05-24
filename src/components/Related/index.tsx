@@ -12,15 +12,16 @@ type Props = {
 
 export const Related:FC <Props> = ({type, id}) => {
 
-    const [data, setData] = React.useState()
+    const [data, setData] = React.useState<any[]>([])
 
     const getData = async () => {
-        const data = await MediaService.getSimilar(type, id)
-        console.log(data)
+        const response = await MediaService.getSimilar(type, id)
+        setData(response.data.results)
+        console.log(response.data.results)
     }
+
     React.useEffect(()=>{
         getData()
-
     }, [])
 
     const LIST = [
@@ -93,18 +94,10 @@ export const Related:FC <Props> = ({type, id}) => {
             slidesToSlide={1}
           swipeable
         >
-            {LIST.map((item, index) => (
-                <img src={item} />
-            ))}
-            {/* {data ? (
-              data.map((item, index) => (
-                <Media src={item.poster_path} item={item} title={item.title} />
-              ))
-            ) : (
-              LIST.map((item, index) => (
-                <Media src={item} data={data} />
-              ))
-            )} */}
+            
+        {data && data.map((item : any, index : any) => (
+            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} key={index}/>
+        ))}
     
         </Carousel>
       );
