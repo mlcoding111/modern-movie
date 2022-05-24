@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { MediaDetailsWrapper, MediaInfo } from './styles'
 import { Col, Row, Grid } from '../../styles/global'
 import { IMG_URL } from '../../utils/variables'
+import {Related} from '../Related'
 import MediaService from '../../services/MediaService';
 
 
@@ -60,8 +61,8 @@ export const MediaDetails:FC = () => {
         </Row>
         <Row>
           <p>Display recommended media here</p>
+          <Related />
         </Row>
-
       </Grid>      
     </MediaDetailsWrapper>
   )

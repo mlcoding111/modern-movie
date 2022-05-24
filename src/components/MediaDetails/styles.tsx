@@ -23,6 +23,10 @@ export const MediaDetailsWrapper = styled.div`
         padding: .4rem;
     }
 
+    h2{
+        margin: 1em 0
+    }
+
     li{
         margin: 0 .5rem;
     }
