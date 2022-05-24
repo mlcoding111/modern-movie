@@ -42,15 +42,18 @@ const App:FC = () => {
   // Fetch the api for the type selected by the user and update the data
   const handleTypeChange = (typeName: string) => {
     setType(typeName)
-    MediaService.getPopular(type).then((res : any) => {
+    fetchGenres(typeName)
+    MediaService.getPopular(typeName).then((res : any) => {
       setData(res.data.results)
+      console.log(res)
     })
     genresList.forEach(genre => {
       console.log(genre)
       document.getElementById(genre.name)?.classList.remove('active')
       // genre.name === innerText ? document.getElementById(innerText)?.classList.add("active") : document.getElementById(genre.name)?.classList.remove("active")
     })
-    fetchGenres(typeName)
+    console.log('clicked')
+
   }
 
 
