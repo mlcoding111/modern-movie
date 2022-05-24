@@ -36,7 +36,10 @@ export const MediaDetails:FC <Props> = () => {
                 <li>Rating</li>
                 <li>Type</li>
             </ul>
-            <p>Overview</p>
+            <p className='overview'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet doloremque, aspernatur, 
+            officia animi a alias numquam odio, soluta eos exercitationem aliquam. Officiis commodi odio dolore labore earum id eaque soluta ad 
+            rerum necessitatibus. Minus dolorum soluta impedit aperiam. Exercitationem itaque vel reprehenderit impedit voluptatem, minima, fugit 
+            illo porro quae eveniet eius placeat perspiciatis ducimus ullam perferendis voluptatibus pariatur!</p>
             
           </Col>
         </Row>
