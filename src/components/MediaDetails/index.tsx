@@ -4,16 +4,22 @@ import { useParams } from 'react-router-dom'
 // Interface to make props reliable on the test.tsx
 import { MediaDetailsWrapper, MediaInfo } from './styles'
 import { Col, Row, Grid } from '../../styles/global'
+import { IMG_URL } from '../../utils/variables'
+import MediaService from '../../services/MediaService';
 
-interface Props{
-    rating?: number,
-    title?: string,
-    imgSrc?: string,
-    overview?: string
-}
 
-export const MediaDetails:FC <Props> = () => {
-  const { title, id } = useParams();
+export const MediaDetails:FC = () => {
+  const { title, id, type } = useParams();
+  const [data, setData] = React.useState<any>({})
+
+  const getData = async () => {
+    const response = await MediaService.getById(type!, id!)
+    setData(response.data)
+  }
+
+  React.useEffect(()=> {
+    getData()
+  }, [])
 
   return (
     <MediaDetailsWrapper>
@@ -21,13 +27,13 @@ export const MediaDetails:FC <Props> = () => {
       <Grid>
         {/* Row */}
         <Row>
-          <h1>{title}</h1>
+          <h1>{data.original_title}</h1>
         </Row>
 
         {/* Row */}
         <Row>          
-          <Col size={1}>
-            <img src="https://picsum.photos/350/560" />
+          <Col size={1.3}>
+            <img src={IMG_URL + data.poster_path} />
           </Col>
           
           <Col size={3}>
