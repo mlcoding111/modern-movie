@@ -35,8 +35,6 @@ const Home:FC = () => {
       MediaService.getGenre(type, genreName, genresList).then((res : any) => {
         setData(res.data.results)
       })
-      console.log(data)
-      // console.log(genresList)
     }
   
     // Fetch the api for the type selected by the user and update the data
@@ -45,10 +43,8 @@ const Home:FC = () => {
       fetchGenres(typeName)
       MediaService.getPopular(typeName).then((res : any) => {
         setData(res.data.results)
-        console.log(res)
       })
       genresList.forEach(genre => {
-        console.log(genre)
         document.getElementById(genre.name)?.classList.remove('active')
         // genre.name === innerText ? document.getElementById(innerText)?.classList.add("active") : document.getElementById(genre.name)?.classList.remove("active")
       })

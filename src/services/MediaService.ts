@@ -31,7 +31,7 @@ const trending = (type : string) => {
 // Api get requests 
 
 export const getGenresList = async (type : string) => {
-    const {data} = await http.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=${API_KEY}&language=en-US`)
+    const {data} = await http.get(`https://api.themoviedb.org/3/genre/${type}/list?${API_KEY}&language=en-US`)
     return data.genres
 }
 
