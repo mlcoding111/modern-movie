@@ -44,6 +44,7 @@ export const Row = styled.div`
     flex-wrap: wrap;
     border: 1px solid red;
     max-width: 1170px;
+    justify-content: center;
 `
 
 export const Col = styled.div<ColProps>`

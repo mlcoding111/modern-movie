@@ -55,11 +55,8 @@ export const MediaDetails:FC = () => {
         </Row>
 
         {/* Row */}
-        <Row>
-          <Col size={1}>
+        <Row id="related-list">
             <h2>Related</h2>     
-            <h2>Details</h2>
-          </Col>
         </Row>
         <Row>
           <p>Display recommended media here</p>

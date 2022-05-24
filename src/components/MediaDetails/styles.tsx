@@ -5,8 +5,9 @@ type Props = {
 }
 
 export const MediaDetailsWrapper = styled.div`
-
+    min-height: 100vh;
     color: white;
+    background: linear-gradient(to bottom, rgba(0,0,0, .3), rgba(0,0 ,0, 0));
 
     h1{
         margin: 1em auto;
@@ -28,7 +29,6 @@ export const MediaDetailsWrapper = styled.div`
 
     .overview{
         padding: 1rem;
-        margin-top: 2rem;
     }
 `
 export const MediaInfo = styled.div`
