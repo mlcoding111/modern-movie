@@ -17,13 +17,14 @@ const SearchBar = (props: Props) => {
             // Fetch the search request
             MediaService.search(searchValue).then(res => setData(res.data.results))
         }else{
-            // Do something else
+            MediaService.getPopular('movie').then(res=> setData(res.data.results))
+            // Reset data
         }
         console.log(searchValue)
     }
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSubmit(e)} onChange={(e) => input?.value == "" ? MediaService.getPopular('movie').then(res=> setData(res.data.results)) : null}>
               <SearchInput id="search"/>
         </form>
 

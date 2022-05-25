@@ -15,11 +15,28 @@ export const MediaDetailsWrapper = styled.div`
 
     img{
         width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 0px 8px black;
+    }
+
+    #related-list h2{
+        margin: 3em auto;
+        font-size: 1.8em;
+        font-weight: 400 !important;
+    }
+
+    #related-list h2::after{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 50px;
+        background: white;
+        position: relative;
+        margin: 0 auto;
     }
 
     #poster-img{
         box-shadow: 2px 0px 15px black;
-        border-radius: 15px;
     }
 
     ul{

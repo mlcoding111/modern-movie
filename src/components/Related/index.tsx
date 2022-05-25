@@ -3,6 +3,8 @@ import React, { FC } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+import styled from 'styled-components'
+
 import MediaService from '../../services/MediaService'
 
 type Props = {
@@ -48,8 +50,8 @@ export const Related:FC <Props> = ({type, id}) => {
     const responsive = {
         desktop: {
           breakpoint: {
-            max: 3000,
-            min: 1024,
+            max: 1920,
+            min: 1080,
           },
           items: 8,
           partialVisibilityGutter: 10,
@@ -73,12 +75,13 @@ export const Related:FC <Props> = ({type, id}) => {
       };
     
       return (
+        <Wrapper>
         <Carousel
           additionalTransfrom={0}
           arrows
           autoPlaySpeed={3000}
           centerMode={false}
-          className=""
+          className="carousel"
           containerClass="container-with-dots"
           dotListClass=""
           draggable
@@ -90,8 +93,8 @@ export const Related:FC <Props> = ({type, id}) => {
           renderDotsOutside={false}      
           responsive={responsive}
           showDots={false}
-            sliderClass=""
-            slidesToSlide={1}
+          sliderClass=""
+          slidesToSlide={1}
           swipeable
         >
             
@@ -100,5 +103,25 @@ export const Related:FC <Props> = ({type, id}) => {
         ))}
     
         </Carousel>
+        </Wrapper>
       );
+     
 }
+
+export const Wrapper = styled.div`
+
+  width: 100%;
+  img{
+    width: 100%;
+    transition: 0.1s ease-in-out;
+    opacity: 0.9;
+  }
+
+  img:hover{
+    transform: scale(1.03);
+    opacity: 1;
+    cursor: pointer;
+    overflow: visible;
+    z-index: 999;
+  }
+`

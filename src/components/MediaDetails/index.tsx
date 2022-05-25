@@ -61,7 +61,6 @@ export const MediaDetails:FC = () => {
         </Row>
 
         <Row>
-          <p>Display recommended media here</p>
           <Related id={id!} type={type!}/>
         </Row>
 
