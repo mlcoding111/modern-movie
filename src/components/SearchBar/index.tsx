@@ -1,18 +1,17 @@
 import React from 'react'
 import { SearchInput } from './styles'
 import MediaService from '../../services/MediaService'
+import { useGlobalContext } from '../../global/MyGlobalContext'
 
 type Props = {}
 
 const SearchBar = (props: Props) => {
-    
-    const [data, setData] = React.useState<any[]>([])
+    const {data, setData} = useGlobalContext();
 
     let input = (document.querySelector('#search') as HTMLInputElement);
 
     const handleSubmit = (e : any) => {
         e.preventDefault();
-
         let searchValue = input?.value;
         if(searchValue){
             // Fetch the search request
