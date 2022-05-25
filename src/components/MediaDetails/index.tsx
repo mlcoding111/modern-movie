@@ -41,7 +41,7 @@ export const MediaDetails:FC = () => {
         {/* Row */}
         <Row>          
           <Col size={1.3}>
-            <img src={IMG_URL + data.poster_path} />
+            <img src={IMG_URL + data.poster_path} id="poster-img"/>
           </Col>
           
           <Col size={3}>

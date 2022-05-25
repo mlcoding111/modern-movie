@@ -17,6 +17,11 @@ export const MediaDetailsWrapper = styled.div`
         width: 100%;
     }
 
+    #poster-img{
+        box-shadow: 2px 0px 15px black;
+        border-radius: 15px;
+    }
+
     ul{
         list-style: none;
         display: flex;
