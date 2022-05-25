@@ -5,12 +5,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './containers/Home'
 import { MediaDetails } from './components/MediaDetails';
 import { Layout } from './containers/Layout';
+import { MyGlobalContext } from './global/MyGlobalContext';
 
 const App:FC = () => {
-
+  const [data, setData] = React.useState<Array<[]>>([])
   return (
     <div className="App">
-
+      <MyGlobalContext.Provider value={{data, setData}}>
       <Layout>
         <NavBar/>
 
@@ -26,6 +27,7 @@ const App:FC = () => {
           </BrowserRouter>
           
       </Layout>
+      </MyGlobalContext.Provider>
 
     </div>
   );

@@ -4,12 +4,14 @@ import { Movie } from '../../components/Media';
 import { Layout } from '../../containers/Layout';
 import { Container } from'../../styles/global'
 
+import { useGlobalContext } from '../../global/MyGlobalContext'
+
 import MediaService from '../../services/MediaService';
 import { TypeSelector } from '../../components/TypeSelector';
 import { GenreSelector } from '../../components/GenreSelector';
 
 const Home:FC = () => {
-    const [data, setData] = React.useState<any[]>([])
+    const {data, setData} = useGlobalContext();
     const [genre, setGenre] = React.useState<string>('Action')
     const [type, setType] = React.useState<string>('movie')
     const [genresList, setGenresList] = React.useState<{id: number, name: string}[]>([])
