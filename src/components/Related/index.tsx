@@ -7,6 +7,8 @@ import styled from 'styled-components'
 
 import MediaService from '../../services/MediaService'
 
+import {Movie} from '../Media'
+
 type Props = {
     type: string,
     id: string
@@ -21,31 +23,10 @@ export const Related:FC <Props> = ({type, id}) => {
         setData(response.data.results)
         console.log(response.data.results)
     }
-
+    
     React.useEffect(()=>{
         getData()
     }, [])
-
-    const LIST = [
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-        "https://picsum.photos/200",
-      ];
       
     const responsive = {
         desktop: {
@@ -99,7 +80,9 @@ export const Related:FC <Props> = ({type, id}) => {
         >
             
         {data && data.map((item : any, index : any) => (
-            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} key={index}/>
+            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} 
+                 key={index}
+                 />
         ))}
     
         </Carousel>
