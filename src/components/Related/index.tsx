@@ -7,14 +7,16 @@ import styled from 'styled-components'
 
 import MediaService from '../../services/MediaService'
 
-import {Movie} from '../Media'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {
     type: string,
-    id: string
+    id: string,
+    changeData: (type: string, id: string) => void
 }
 
-export const Related:FC <Props> = ({type, id}) => {
+export const Related:FC <Props> = ({type, id, changeData}) => {
+    const navigate = useNavigate();
 
     const [data, setData] = React.useState<any[]>([])
 
@@ -23,10 +25,15 @@ export const Related:FC <Props> = ({type, id}) => {
         setData(response.data.results)
         console.log(response.data.results)
     }
-    
+
     React.useEffect(()=>{
         getData()
     }, [])
+
+    const handleClick = (ids: string, title: string) => {
+      console.log(ids, title)      
+      navigate(`/media/${type}/${title}/${ids}`, {replace: true, state: {id: id, title: title}})
+    }
       
     const responsive = {
         desktop: {
@@ -82,6 +89,7 @@ export const Related:FC <Props> = ({type, id}) => {
         {data && data.map((item : any, index : any) => (
             <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} 
                  key={index}
+                 onClick={() => handleClick(item.id, item.title)}
                  />
         ))}
     

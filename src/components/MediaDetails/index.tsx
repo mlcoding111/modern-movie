@@ -8,14 +8,29 @@ import { IMG_URL } from '../../utils/variables'
 import {Related} from '../Related'
 import MediaService from '../../services/MediaService';
 
+import { useLocation } from 'react-router-dom';
+
+interface States{
+  id: string,
+  title: string
+}
 
 export const MediaDetails:FC = () => {
   const { title, id, type } = useParams();
   const [data, setData] = React.useState<any>({})
 
+  let location = useLocation();
+  let state = location.state as States;
+
   const getData = async () => {
+    // const response = await MediaService.getById(type!, id!)
     const response = await MediaService.getById(type!, id!)
-    setData(response.data)
+    setData(response.data)   
+  }
+
+  const getRelatedData = async (relatedType?: string, relatedId?: string) => {
+    const response = await MediaService.getById(relatedType!, relatedId!)
+    setData(response.data)   
   }
 
   const timeConvertor = (time: string) => {
@@ -26,8 +41,13 @@ export const MediaDetails:FC = () => {
   }
 
   React.useEffect(()=> {
-    getData()
-  }, [])
+    if(location.state){
+      getRelatedData('movie', state.id)
+    }else{
+      getData()
+    }
+
+  }, [location])
 
   return (
     <MediaDetailsWrapper>
@@ -61,7 +81,7 @@ export const MediaDetails:FC = () => {
         </Row>
 
         <Row>
-          <Related id={id!} type={type!}/>
+          <Related id={id!} type={type!} changeData={() => getRelatedData()}/>
         </Row>
 
       </Grid>      
