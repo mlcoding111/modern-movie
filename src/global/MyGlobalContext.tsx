@@ -10,16 +10,5 @@ export const MyGlobalContext = createContext<GlobalContent>({
     setData: () => {},
 })
 
-export type GlobalTypeContent = {
-    type: string,
-    setType: (d: string) => void
-}
-
-export const MyGlobalTypeContext = createContext<GlobalTypeContent>({
-    type: "movie", // set a default value
-    setType: () => {},
-})
 
 export const useGlobalContext = () => useContext(MyGlobalContext)
-
-export const useGlobalTypeContext = () => useContext(MyGlobalTypeContext)
