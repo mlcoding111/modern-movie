@@ -10,6 +10,10 @@ type genresListType = {
 
 // Utility function
 
+const getMedia = (value: string) => {
+    return `/search/movie?${API_KEY}&query=${value}`
+}
+
 const mediaId = (type: string, id: string) => {
     return `/${type}/${id}?`
 }
@@ -60,13 +64,20 @@ const getSimilar = (type: string, id : string) => {
     return http.get(similar(type, id) + API_KEY)
 }
 
+const search = (value : string) => {
+    return http.get(getMedia(value))
+}
+
+
+
 const MediaService = {
     getPopular,
     getTrending,
     getGenre,
     getGenresList,
     getById,
-    getSimilar
+    getSimilar,
+    search
 };
 
 export default MediaService;
