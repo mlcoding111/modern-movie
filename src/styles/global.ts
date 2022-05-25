@@ -42,14 +42,14 @@ export const Row = styled.div`
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     max-width: 1170px;
     justify-content: center;
 `
 
 export const Col = styled.div<ColProps>`
     flex: ${(props) => props.size};
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 `
 
 export const Container = styled.div`

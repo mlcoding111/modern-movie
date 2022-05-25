@@ -8,7 +8,7 @@ export const MediaDetailsWrapper = styled.div`
     min-height: 100vh;
     color: white;
     background: linear-gradient(to bottom, rgba(0,0,0, .3), rgba(0,0 ,0, 0));
-
+    width: 100%;
     h1{
         margin: 1em auto;
     }
