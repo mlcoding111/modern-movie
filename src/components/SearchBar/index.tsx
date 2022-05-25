@@ -18,7 +18,7 @@ const SearchBar = (props: Props) => {
             MediaService.search(searchValue).then(res => setData(res.data.results))
         }else{
             MediaService.getPopular('movie').then(res=> setData(res.data.results))
-            // Reset data
+            // Reset data 
         }
         console.log(searchValue)
     }

@@ -9,6 +9,7 @@ import { MyGlobalContext } from './global/MyGlobalContext';
 
 const App:FC = () => {
   const [data, setData] = React.useState<Array<[]>>([])
+  // const [type, setType] = React.useState<Array<[]>>([])
   return (
     <div className="App">
       <MyGlobalContext.Provider value={{data, setData}}>
