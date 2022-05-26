@@ -42,22 +42,22 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
             min: 1080,
           },
           items: 8,
-          partialVisibilityGutter: 10,
+          partialVisibilityGutter: 0,
         },
         mobile: {
           breakpoint: {
-            max: 464,
+            max: 750,
             min: 0,
           },
           items: 1,
-          partialVisibilityGutter: 30,
+          partialVisibilityGutter: 0,
         },
         tablet: {
           breakpoint: {
             max: 1024,
-            min: 464,
+            min: 750,
           },
-          items: 2,
+          items: 3,
           partialVisibilityGutter: 30,
         },
       };
@@ -87,7 +87,7 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
         >
             
         {data && data.map((item : any, index : any) => (
-            <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} 
+            <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} 
                  key={index}
                  onClick={() => handleClick(item.id, item.title)}
                  alt="related-img"
@@ -103,7 +103,6 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
 export const Wrapper = styled.div`
   margin-bottom: 4em;
   width: 100%;
-  
   img{
     width: 100%;
     transition: 0.1s ease-in-out;
