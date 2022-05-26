@@ -20,6 +20,17 @@ export const GlobalStyle = createGlobalStyle`
     background: #e08217;
 }
 
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 18px;
+  }
+}
+
 body{
     margin: 0;
     background-color: var(--primary-color);
@@ -59,6 +70,7 @@ interface ColProps{
 export const Grid = styled.div`
     
 `
+
 export const Row = styled.div`
     margin: 0 auto;
     display: flex;

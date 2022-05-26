@@ -33,7 +33,9 @@ const SearchBar = (props: Props) => {
 
     // Everytime location change, empty the SearchBar Value
     React.useEffect(()=>{
-        input.value = ""
+        if(input){
+            input.value = ""
+        }
     }, [location])
 
     
