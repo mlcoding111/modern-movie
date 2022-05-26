@@ -14,9 +14,10 @@ const App:FC = () => {
     <div className="App">
       <MyGlobalContext.Provider value={{data, setData}}>
       <Layout>
-        <NavBar/>
+ 
 
           <BrowserRouter>
+          <NavBar/>
             <Routes>
               <Route path="/" element={<Home />} />
 
