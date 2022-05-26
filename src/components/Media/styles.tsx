@@ -18,6 +18,10 @@ export const MovieCard = styled.div`
         width: 100%;
     }
 
+    img:hover{
+        cursor: pointer;
+    }
+
     .movie-info{
         color: #eee;
         display: flex;
