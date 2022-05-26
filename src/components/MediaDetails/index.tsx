@@ -41,6 +41,7 @@ export const MediaDetails:FC = () => {
   }
 
   React.useEffect(()=> {
+    window.scroll(0, 0);
     if(location.state){
       getRelatedData(type, id)
     }else{

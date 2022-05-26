@@ -13,8 +13,7 @@ const App:FC = () => {
   return (
     <div className="App">
       <MyGlobalContext.Provider value={{data, setData}}>
-      <Layout>
- 
+      <Layout> 
 
           <BrowserRouter>
           <NavBar/>

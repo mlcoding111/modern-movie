@@ -9,8 +9,10 @@ import { useGlobalContext } from '../../global/MyGlobalContext'
 import MediaService from '../../services/MediaService';
 import { TypeSelector } from '../../components/TypeSelector';
 import { GenreSelector } from '../../components/GenreSelector';
+import { useLocation } from 'react-router-dom';
 
 const Home:FC = () => {
+    let location = useLocation();
     const {data, setData} = useGlobalContext();
 
     const [type, setType] = React.useState<string>('movie')
@@ -31,6 +33,10 @@ const Home:FC = () => {
         setData(res.data.results)
       })
     }, [])
+
+    React.useEffect(()=>{
+      window.scroll(0, 0);
+    }, [location])
   
     // Fetch the api for the genre selected by the user and update the data
     const handleGenreChange = async (genreName : string) => {

@@ -12,8 +12,10 @@ const NavBar:FC <Props> = () => {
    let navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(-1);
+    // navigate(-1);
+    navigate("/")
   }
+  
   return (
     <Nav>
         <img src={arrow} onClick={() => handleClick()}/>
