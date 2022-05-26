@@ -74,6 +74,7 @@ export const Col = styled.div<ColProps>`
 `
 
 export const Container = styled.div`
+    padding: 1rem 0;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;

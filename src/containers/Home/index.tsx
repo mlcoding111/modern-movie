@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 
 import { Movie } from '../../components/Media';
 import { Layout } from '../../containers/Layout';
+import { LoadMore } from '../../components/LoadMore';
 import { Container } from'../../styles/global'
 
 import { useGlobalContext } from '../../global/MyGlobalContext'
@@ -78,6 +79,8 @@ const Home:FC = () => {
                     type={type}
               />                            
           ))}
+          <LoadMore />
+          
         </Container>      
       </>
 

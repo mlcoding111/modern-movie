@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Navbar as Nav } from './styles'
 import SearchBar from '../../components/SearchBar'
-import arrow from './arrow.svg'
+import arrow from '../../assets/arrow.svg'
 import {useNavigate} from 'react-router-dom'
 
 type Props = {
