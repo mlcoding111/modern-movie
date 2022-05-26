@@ -7,7 +7,6 @@ import { Col, Row, Grid } from '../../styles/global'
 import { IMG_URL } from '../../utils/variables'
 import {Related} from '../Related'
 import MediaService from '../../services/MediaService';
-
 import { useLocation } from 'react-router-dom';
 
 interface States{
@@ -20,10 +19,8 @@ export const MediaDetails:FC = () => {
   const [data, setData] = React.useState<any>({})
 
   let location = useLocation();
-  let state = location.state as States;
 
   const getData = async () => {
-    // const response = await MediaService.getById(type!, id!)
     const response = await MediaService.getById(type!, id!)
     setData(response.data)   
     console.log(response.data)

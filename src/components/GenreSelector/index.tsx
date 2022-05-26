@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 import { Button, Selector } from './styles'
+import { motion } from 'framer-motion'
 
 type Props = {
   handleGenreChange: (genre: string) => void,
@@ -25,7 +26,9 @@ export const GenreSelector:FC <Props> = ({handleGenreChange, genresList}) => {
     <Selector>
       <ul className="genres-list">
         {genresList && genresList.map((element, index) => (
+          <motion.div layout>
           <li key={index}><Button onClick={handleClick} id={`${element.name}`} >{element.name}</Button></li>
+          </motion.div>
         ))}
       </ul>
     </Selector>

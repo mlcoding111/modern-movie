@@ -5,6 +5,7 @@ import { Layout } from '../../containers/Layout';
 import { Container } from'../../styles/global'
 
 import { useGlobalContext } from '../../global/MyGlobalContext'
+import { motion } from 'framer-motion'
 
 import MediaService from '../../services/MediaService';
 import { TypeSelector } from '../../components/TypeSelector';
@@ -67,7 +68,7 @@ const Home:FC = () => {
         <TypeSelector handleTypeChange={handleTypeChange}/>
         <GenreSelector handleGenreChange={handleGenreChange} genresList={genresList}/>
         <Container>
-          {data && data.map((item, index) => (
+          {data && data.map((item, index) => (            
              <Movie rating={item.vote_average}
                     title={item.title || item.original_title || item.name}
                     imgSrc={item.poster_path}
@@ -75,7 +76,7 @@ const Home:FC = () => {
                     key={index}
                     id={item.id}
                     type={type}
-              />
+              />                            
           ))}
         </Container>      
       </>
