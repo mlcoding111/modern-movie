@@ -48,8 +48,8 @@ const getGenre = async (mediaType : string, genreName : string, genresList: genr
     return http.get(genre(mediaType, genreName, genresList));
 }
 
-const getPopular = (type: string) => {
-    return http.get(popular(type) + API_KEY);
+const getPopular = (type: string, page?: number) => {
+    return http.get(popular(type) + API_KEY + `&page=${page ? page : 1}`);
 }
 
 const getTrending = () => {
