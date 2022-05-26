@@ -42,20 +42,20 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
             min: 1080,
           },
           items: 8,
-          partialVisibilityGutter: 0,
+          partialVisibilityGutter: 10,
         },
         mobile: {
           breakpoint: {
-            max: 750,
+            max: 500,
             min: 0,
           },
           items: 1,
-          partialVisibilityGutter: 0,
+          partialVisibilityGutter: 30,
         },
         tablet: {
           breakpoint: {
             max: 1024,
-            min: 750,
+            min: 500,
           },
           items: 3,
           partialVisibilityGutter: 30,
