@@ -38,6 +38,22 @@ export const MediaDetails:FC = () => {
     return `${hours}h ${minutes} min`
   }
 
+  const filterDate = () => {
+    if(type === "tv"){
+      return (
+        <>
+          ({data.first_air_date && data.first_air_date.slice(0, 4)})
+        </>
+      )
+    }else{
+      return (
+        <>
+          ({data.release_date && data.release_date.slice(0, 4)})
+        </>
+      )
+    }
+  }
+
   React.useEffect(()=> {
     window.scroll(0, 0);
     if(location.state){
@@ -62,7 +78,7 @@ export const MediaDetails:FC = () => {
 
             <Col size={3} className="media-details">
               <div className="title-wrapper">
-                <h1>{data.original_title || data.name} ({data.release_date && data.release_date.slice(0, 4)})</h1>
+                <h1>{data.original_title || data.name} {data && filterDate()}</h1>
               </div>
               <ul>
                   <li>{type == "movie" ? timeConvertor(data.runtime) : (data.number_of_episodes + " episodes")}</li>

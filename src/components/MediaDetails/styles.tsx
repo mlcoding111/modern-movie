@@ -26,13 +26,12 @@ export const MediaDetailsWrapper = styled.div`
     .wrap{
         background-position: center;
         background-size: cover; 
-        padding: 3em 0;
+        padding: 8em 0;
     }
 
     img{
         width: 100%;
         border-radius: 15px;
-        padding: .1em;
         box-shadow: 0px 0px 8px black;
     }
 
