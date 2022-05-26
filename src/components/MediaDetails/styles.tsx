@@ -20,7 +20,7 @@ export const MediaDetailsWrapper = styled.div`
     }
 
     #related-list h2{
-        margin: 3em auto;
+        margin: 2em auto;
         font-size: 1.8em;
         font-weight: 400 !important;
     }

@@ -42,11 +42,10 @@ export const MediaDetails:FC = () => {
 
   React.useEffect(()=> {
     if(location.state){
-      getRelatedData('movie', state.id)
+      getRelatedData(type, id)
     }else{
       getData()
     }
-
   }, [location])
 
   return (
