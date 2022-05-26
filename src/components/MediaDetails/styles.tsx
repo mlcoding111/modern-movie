@@ -10,6 +10,32 @@ export const MediaDetailsWrapper = styled.div`
     background: linear-gradient(to bottom, rgba(0,0,0, .3), rgba(0,0 ,0, 0));
     width: 100%;
 
+    @media all and (min-width: 950px) {
+        .media-details {
+            margin-left: 1em;
+            border: 1px solid red;
+        }
+    }
+
+    @media all and (max-width: 950px){
+        .row{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0 auto;
+        }
+        img{
+            width: 250px !important;
+        }
+
+        ul{
+            margin: 0 auto;
+        }
+
+    }
+
     .title-wrapper{
         display: flex;
         flex-direction: column;
@@ -17,7 +43,6 @@ export const MediaDetailsWrapper = styled.div`
     }
 
     .media-details{
-        margin-left: 1em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

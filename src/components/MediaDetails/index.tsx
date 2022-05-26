@@ -70,11 +70,10 @@ export const MediaDetails:FC = () => {
         <div className="wrap" style={{backgroundImage: `linear-gradient(#141331e5, rgba(0,0,0, 0.8)), url(https://image.tmdb.org/t/p/original${data.backdrop_path})`}}>       
 
           {/* Row */}
-          <Row>          
+          <Row className="row">          
             <Col size={1.3}>
               <img src={IMG_URL + data.poster_path} id="poster-img"/>
-            </Col>
-              
+            </Col>              
 
             <Col size={3} className="media-details">
               <div className="title-wrapper">
