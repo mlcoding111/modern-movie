@@ -103,6 +103,7 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
 export const Wrapper = styled.div`
   margin-bottom: 4em;
   width: 100%;
+  
   img{
     width: 100%;
     transition: 0.1s ease-in-out;

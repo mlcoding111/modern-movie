@@ -6,6 +6,7 @@ import Home from './containers/Home'
 import { MediaDetails } from './components/MediaDetails';
 import { Layout } from './containers/Layout';
 import { MyGlobalContext } from './global/MyGlobalContext';
+import {Footer} from './containers/Footer'
 
 const App:FC = () => {
   const [data, setData] = React.useState<Array<[]>>([])
@@ -25,6 +26,7 @@ const App:FC = () => {
               </Route>
               
             </Routes>
+          <Footer />
           </BrowserRouter>
           
       </Layout>
