@@ -30,6 +30,27 @@ body{
     min-height: 100vh;
 }
 
+// Carousel override
+
+.react-multiple-carousel__arrow--left{
+    left: 0px !important;
+}
+
+.react-multiple-carousel__arrow--right{
+    right: 0px !important;
+}
+
+.react-multiple-carousel__arrow{
+    background: rgba(0,0 ,0, 0.7) !important;
+    height: 100%;
+    border-radius: 2px !important;
+}
+
+.react-multiple-carousel__arrow:hover{
+    background: rgba(0,0 ,0, 0.9) !important;
+}
+
+
 `
 interface ColProps{
     size: number
@@ -43,7 +64,7 @@ export const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
     /* border: 1px solid red; */
-    max-width: 1170px;
+    max-width: 1250px;
     justify-content: center;
 `
 
