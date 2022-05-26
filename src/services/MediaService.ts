@@ -43,9 +43,9 @@ export const getGenresList = async (type : string) => {
     return data.genres
 }
 
-const getGenre = async (mediaType : string, genreName : string, genresList: genresListType[]) => {
+const getGenre = async (mediaType : string, genreName : string, genresList: genresListType[], page?: number) => {
     // const data = await getGenresList('tv')
-    return http.get(genre(mediaType, genreName, genresList));
+    return http.get(genre(mediaType, genreName, genresList)+ `&page=${page ? page : 1}`);
 }
 
 const getPopular = (type: string, page?: number) => {

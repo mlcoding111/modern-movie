@@ -44,7 +44,7 @@ const Home:FC = () => {
   
     // Fetch the api for the genre selected by the user and update the data
     const handleGenreChange = async (genreName : string) => {
-      setPageCount(2)
+      setPageCount(2) // Reset page count
       setGenre(genreName)
       fetchGenres(type)
       MediaService.getGenre(type, genreName, genresList).then((res : any) => {
@@ -54,7 +54,8 @@ const Home:FC = () => {
   
     // Fetch the api for the type selected by the user and update the data
     const handleTypeChange = (typeName: string) => {
-      setPageCount(2)
+      setGenre("Popular")
+      setPageCount(2) // Reset page count
       setType(typeName)
       fetchGenres(typeName)
       MediaService.getPopular(typeName).then((res : any) => {
@@ -69,21 +70,34 @@ const Home:FC = () => {
     }
 
     const loadMore = () => {
-      setPageCount(pageCount + 1)
-      MediaService.getPopular(type, pageCount).then((res : any) => {
-        let newArr = [...data];
-        let response = res.data.results
-        response.forEach((media: any) => {
-          newArr.push(media)
+      setPageCount(pageCount + 1) // Increment pageCount
+      // If no genre is selected, fetch popular medias..
+      if(genre === "Popular"){
+        MediaService.getPopular(type, pageCount).then((res : any) => {
+          let newArr = [...data];
+          let response = res.data.results
+          response.forEach((media: any) => {
+            newArr.push(media)
+          })
+          console.log(response)
+          setData(newArr)
         })
-        console.log(response)
-        setData(newArr)
-      })
+      }else{
+        // If there is a selected genre, fetch additionnal pages for that genre..
+        MediaService.getGenre(type, genre, genresList, pageCount).then((res : any) => {
+          let newArr = [...data];
+          let response = res.data.results
+          response.forEach((media: any) => {
+            newArr.push(media)
+          })
+          setData(newArr)
+        })
+      }
+
     }
   
   return (
       <>
-      <button onClick={()=> console.log(genre)}>Click me</button>
         <TypeSelector handleTypeChange={handleTypeChange}/>
         <GenreSelector handleGenreChange={handleGenreChange} genresList={genresList}/>
         <Container>
