@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import NavBar from './containers/NavBar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './containers/Home'
 import { MediaDetails } from './components/MediaDetails';
@@ -16,7 +16,7 @@ const App:FC = () => {
       <MyGlobalContext.Provider value={{data, setData}}>
       <Layout> 
 
-          <BrowserRouter>
+          <HashRouter>
           <NavBar/>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -27,7 +27,7 @@ const App:FC = () => {
               
             </Routes>
           <Footer />
-          </BrowserRouter>
+          </HashRouter>
           
       </Layout>
       </MyGlobalContext.Provider>
