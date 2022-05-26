@@ -26,6 +26,7 @@ export const MediaDetails:FC = () => {
     // const response = await MediaService.getById(type!, id!)
     const response = await MediaService.getById(type!, id!)
     setData(response.data)   
+    console.log(response.data)
   }
 
   const getRelatedData = async (relatedType?: string, relatedId?: string) => {
@@ -51,29 +52,41 @@ export const MediaDetails:FC = () => {
 
   return (
     <MediaDetailsWrapper>
-      <button onClick={()=> console.log(data)}>Click me</button>
+      {/* <button onClick={()=> console.log(data)}>Click me</button> */}
       <Grid>
-        {/* Row */}
-        <Row>
-          <h1>{data.original_title || data.name}</h1>
-        </Row>
+        <div className="wrap" style={{backgroundImage: `linear-gradient(#141331e5, rgba(0,0,0, 0.8)), url(https://image.tmdb.org/t/p/original${data.backdrop_path})`}}>       
 
-        {/* Row */}
-        <Row>          
-          <Col size={1.3}>
-            <img src={IMG_URL + data.poster_path} id="poster-img"/>
-          </Col>
-          
-          <Col size={3}>
-            <ul>
-                <li>{type == "movie" ? timeConvertor(data.runtime) : (data.number_of_episodes + " episodes")}</li>
-                <li>{data.vote_average}</li>
-                <li>{type?.toLocaleUpperCase()}</li>
-            </ul>
-            <p className='overview'>{data.overview}</p>
-            
-          </Col>
-        </Row>
+          {/* Row */}
+          <Row>          
+            <Col size={1.3}>
+              <img src={IMG_URL + data.poster_path} id="poster-img"/>
+            </Col>
+              
+
+            <Col size={3} className="media-details">
+              <div className="title-wrapper">
+                <h1>{data.original_title || data.name} ({data.release_date && data.release_date.slice(0, 4)})</h1>
+              </div>
+              <ul>
+                  <li>{type == "movie" ? timeConvertor(data.runtime) : (data.number_of_episodes + " episodes")}</li>
+                  <li>{data.vote_average}</li>
+                  <li>{data.original_language && data.original_language.toUpperCase()}</li>
+              </ul>
+              
+              <p className='overview'>
+              <i><h3 id="tagline">{data.tagline}</h3></i>
+                <h3>Overview</h3>{data.overview}
+              </p>
+
+              <ul className="genres-list">
+                {data.genres && data.genres.map((item: any, index: number) => (
+                  <li key={index}>{item.name}</li>
+                ))}
+              </ul>
+            </Col>
+          </Row>
+
+        </div>
 
         {/* Row */}
         <Row id="related-list">

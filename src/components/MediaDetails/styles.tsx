@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-type Props = {
-    rating: number;
+type props = {
+    backdrop_path: string;
 }
 
 export const MediaDetailsWrapper = styled.div`
@@ -9,13 +9,30 @@ export const MediaDetailsWrapper = styled.div`
     color: white;
     background: linear-gradient(to bottom, rgba(0,0,0, .3), rgba(0,0 ,0, 0));
     width: 100%;
-    h1{
-        margin: 1em auto;
+
+    .title-wrapper{
+        display: flex;
+        flex-direction: column;
+        margin-left: .5em;
+    }
+
+    .media-details{
+        margin-left: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .wrap{
+        background-position: center;
+        background-size: cover; 
+        padding: 3em 0;
     }
 
     img{
         width: 100%;
         border-radius: 15px;
+        padding: .1em;
         box-shadow: 0px 0px 8px black;
     }
 
@@ -50,11 +67,28 @@ export const MediaDetailsWrapper = styled.div`
     }
 
     li{
-        margin: 0 .5rem;
+        margin: 0 .3rem;
     }
 
     .overview{
+        position: relative;
+        vertical-align: middle;
         padding: 1rem;
+    }
+
+    #tagline{
+        font-weight: 400;
+        font-size: 1.4em;
+        margin: 1em 0;
+        opacity: .8;
+    }
+
+    .genres-list{
+        margin-top: auto;
+    }
+
+    .genres-list li:not(:last-child):after{
+        content: ",";
     }
 `
 export const MediaInfo = styled.div`
