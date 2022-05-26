@@ -90,6 +90,7 @@ export const Related:FC <Props> = ({type, id, changeData}) => {
             <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} 
                  key={index}
                  onClick={() => handleClick(item.id, item.title)}
+                 alt="related-img"
                  />
         ))}
     
