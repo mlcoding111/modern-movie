@@ -18,8 +18,9 @@ const Home:FC = () => {
     const {data, setData} = useGlobalContext();
 
     const [type, setType] = React.useState<string>('movie')
+    const [pageCount, setPageCount] = React.useState<number>(1)
 
-    const [genre, setGenre] = React.useState<string>('Action')
+    const [genre, setGenre] = React.useState<string>('Popular')
     const [genresList, setGenresList] = React.useState<{id: number, name: string}[]>([])
   
     // Fetch the genres list for a given type : "Tv" or "Movie"
@@ -34,6 +35,7 @@ const Home:FC = () => {
       MediaService.getPopular(type).then((res : any) => {
         setData(res.data.results)
       })
+      setPageCount(pageCount + 1)
     }, [])
 
     React.useEffect(()=>{
@@ -42,6 +44,7 @@ const Home:FC = () => {
   
     // Fetch the api for the genre selected by the user and update the data
     const handleGenreChange = async (genreName : string) => {
+      setPageCount(2)
       setGenre(genreName)
       fetchGenres(type)
       MediaService.getGenre(type, genreName, genresList).then((res : any) => {
@@ -51,6 +54,7 @@ const Home:FC = () => {
   
     // Fetch the api for the type selected by the user and update the data
     const handleTypeChange = (typeName: string) => {
+      setPageCount(2)
       setType(typeName)
       fetchGenres(typeName)
       MediaService.getPopular(typeName).then((res : any) => {
@@ -63,9 +67,23 @@ const Home:FC = () => {
       console.log('clicked')
   
     }
+
+    const loadMore = () => {
+      setPageCount(pageCount + 1)
+      MediaService.getPopular(type, pageCount).then((res : any) => {
+        let newArr = [...data];
+        let response = res.data.results
+        response.forEach((media: any) => {
+          newArr.push(media)
+        })
+        console.log(response)
+        setData(newArr)
+      })
+    }
   
   return (
       <>
+      <button onClick={()=> console.log(genre)}>Click me</button>
         <TypeSelector handleTypeChange={handleTypeChange}/>
         <GenreSelector handleGenreChange={handleGenreChange} genresList={genresList}/>
         <Container>
@@ -79,7 +97,7 @@ const Home:FC = () => {
                     type={type}
               />                            
           ))}
-          <LoadMore />
+          <LoadMore loadMore={loadMore}/>
           
         </Container>      
       </>

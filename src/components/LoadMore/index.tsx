@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import arrow from '../../assets/arrow.svg'
 import {motion} from 'framer-motion'
-type Props = {}
+type Props = {
+    loadMore: () => void;
+}
 
 export const LoadMore = (props: Props) => {
 
@@ -10,7 +12,7 @@ export const LoadMore = (props: Props) => {
     }
     return (
       <Wrapper>
-            <h3>Load more</h3><motion.img whileHover={{ scale: 1.01, y: 5 }} style={{rotate: -90}} src={arrow} width="30"/>
+            <h3>Load more</h3><motion.img whileHover={{ scale: 1.01, y: 5 }} style={{rotate: -90}} src={arrow} width="30" onClick={props.loadMore}/>
       </Wrapper>
     )
 }
