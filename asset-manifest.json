@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.1afad95a.css",
-    "main.js": "/static/js/main.1989316e.js",
-    "static/js/787.614d1a85.chunk.js": "/static/js/787.614d1a85.chunk.js",
-    "static/media/revicons.eot": "/static/media/revicons.a77de540a38981833f9e.eot",
-    "static/media/revicons.ttf": "/static/media/revicons.57fd05d4ae650374c8de.ttf",
-    "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
-    "index.html": "/index.html",
-    "static/media/arrow.svg": "/static/media/arrow.b3bc1c181da4700016b44b0bd2e057a2.svg",
-    "main.1afad95a.css.map": "/static/css/main.1afad95a.css.map",
-    "main.1989316e.js.map": "/static/js/main.1989316e.js.map",
-    "787.614d1a85.chunk.js.map": "/static/js/787.614d1a85.chunk.js.map"
+    "main.css": "/modern-movie/static/css/main.24614e1f.css",
+    "main.js": "/modern-movie/static/js/main.0a501eea.js",
+    "static/js/787.614d1a85.chunk.js": "/modern-movie/static/js/787.614d1a85.chunk.js",
+    "static/media/revicons.eot": "/modern-movie/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/modern-movie/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/modern-movie/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/modern-movie/index.html",
+    "static/media/arrow.svg": "/modern-movie/static/media/arrow.b3bc1c181da4700016b44b0bd2e057a2.svg",
+    "main.24614e1f.css.map": "/modern-movie/static/css/main.24614e1f.css.map",
+    "main.0a501eea.js.map": "/modern-movie/static/js/main.0a501eea.js.map",
+    "787.614d1a85.chunk.js.map": "/modern-movie/static/js/787.614d1a85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1afad95a.css",
-    "static/js/main.1989316e.js"
+    "static/css/main.24614e1f.css",
+    "static/js/main.0a501eea.js"
   ]
 }
