@@ -8,10 +8,6 @@ export const SearchInput = styled.input`
     font-size: 1rem;
     color: #fff;
     font-family: inherit;
-    @media screen and (max-width: 400px){
-        padding: 0.5rem 0rem;
-        width: 150px;
-    }
     ::placeholder{
     color: #7378c5;
     }
