@@ -13,7 +13,6 @@ export const MediaDetailsWrapper = styled.div`
     @media all and (min-width: 950px) {
         .media-details {
             margin-left: 1em;
-            border: 1px solid red;
         }
     }
 
