@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     background: #e08217;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 @media screen and (min-width: 320px) {
   html {
     font-size: calc(16px * ((100vw - 320px) / 680));

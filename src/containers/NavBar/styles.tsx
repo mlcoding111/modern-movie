@@ -9,6 +9,16 @@ export const Navbar = styled.nav`
     background-color: var(--secondary-color);
     z-index: 999;
     opacity: .9;
+    @media screen and (max-width: 700px) {
+        padding: 1rem 0rem !important;
+        justify-content: center;
+
+        img{
+            position: absolute;
+            left: 0;
+            margin-left: 1em !important;
+        }
+    }
     
     img{
         transition: all 0.2s;
