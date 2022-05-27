@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/modern-movie/static/css/main.24614e1f.css",
-    "main.js": "/modern-movie/static/js/main.9fc33b2f.js",
+    "main.js": "/modern-movie/static/js/main.6e0f3aac.js",
     "static/js/787.614d1a85.chunk.js": "/modern-movie/static/js/787.614d1a85.chunk.js",
     "static/media/revicons.eot": "/modern-movie/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/modern-movie/static/media/revicons.57fd05d4ae650374c8de.ttf",
@@ -9,11 +9,11 @@
     "index.html": "/modern-movie/index.html",
     "static/media/arrow.svg": "/modern-movie/static/media/arrow.b3bc1c181da4700016b44b0bd2e057a2.svg",
     "main.24614e1f.css.map": "/modern-movie/static/css/main.24614e1f.css.map",
-    "main.9fc33b2f.js.map": "/modern-movie/static/js/main.9fc33b2f.js.map",
+    "main.6e0f3aac.js.map": "/modern-movie/static/js/main.6e0f3aac.js.map",
     "787.614d1a85.chunk.js.map": "/modern-movie/static/js/787.614d1a85.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.24614e1f.css",
-    "static/js/main.9fc33b2f.js"
+    "static/js/main.6e0f3aac.js"
   ]
 }
