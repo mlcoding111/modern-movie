@@ -20,6 +20,14 @@ export const GlobalStyle = createGlobalStyle`
     background: #e08217;
 }
 
+.hidden{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+}
+
 html{
     overflow-x: hidden;
 }

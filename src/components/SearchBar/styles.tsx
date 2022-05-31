@@ -8,6 +8,7 @@ export const SearchInput = styled.input`
     font-size: 1rem;
     color: #fff;
     box-sizing: border-box;
+    margin-right: auto;
 
     font-family: inherit;
     ::placeholder{
@@ -18,7 +19,7 @@ export const SearchInput = styled.input`
     outline: 0;
     background-color: var(--primary-color);
     }
-    
+
     @media screen and (max-width: 300px){
         padding: .2rem 1rem;
         width: 150px;
