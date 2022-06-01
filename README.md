@@ -11,6 +11,8 @@
     Modern movie app using TMDB api
     <br />
     <br />
+    <h4>Date published : 2022-05-30 </h4>
+    <br />
     <br />
     <a href="https://mlcoding111.github.io/modern-movie/" target="_blank">View Demo</a>
   </p>
