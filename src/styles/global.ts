@@ -98,10 +98,21 @@ export const Col = styled.div<ColProps>`
 `
 
 export const Container = styled.div`
-    padding: 1rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    justify-content: center;
-    width: 90%;
+    padding-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-inline: auto;
+    width: min(95%, 70rem);
+
+    @media (max-width: 70em){
+        grid-template-columns:  repeat(3, 1fr);
+    }
+    @media (max-width: 50em){
+        grid-template-columns:  repeat(2, 1fr);
+    }
+    @media (max-width: 30em){
+        grid-template-columns:  repeat(1, 1fr);
+    }
+
 `;
