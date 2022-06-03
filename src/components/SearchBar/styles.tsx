@@ -9,7 +9,7 @@ export const SearchInput = styled.input`
     color: #fff;
     box-sizing: border-box;
     margin-right: auto;
-
+    width: 150px;
     font-family: inherit;
     ::placeholder{
         color: #7378c5;
