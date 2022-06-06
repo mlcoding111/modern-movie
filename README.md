@@ -18,6 +18,10 @@
   </p>
 </div>
 
+## Road Map :
+
+ * [ ] Add Searchbar animation with a lens
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
