@@ -5,14 +5,11 @@ import arrow from '../../assets/arrow.svg'
 import {useNavigate, useLocation} from 'react-router-dom'
 
 type Props = {
-    age?: number
 }
 
 const NavBar:FC <Props> = () => {
   let navigate = useNavigate();
   let location = useLocation();
-
-
 
   React.useEffect(()=>{
     handleArrowRender()

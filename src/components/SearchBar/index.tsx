@@ -14,9 +14,6 @@ const SearchBar = (props: Props) => {
     const [prevData, setPrevData] = React.useState<any[]>([]); // Save old data
     let input = (document.querySelector('#search') as HTMLInputElement);
 
-    // let element = document.querySelector('.genres-list')?.querySelectorAll('li')    
-    // element?.forEach(element => element.classList.remove("active"))
-
     const handleSubmit = (e : any) => {
         setPrevData(data); // Save the prev state of data so we can restore it once the searchBar is empty
         e.preventDefault();
@@ -36,9 +33,7 @@ const SearchBar = (props: Props) => {
         if(input){
             input.value = ""
         }
-    }, [location])
-
-    
+    }, [location])    
 
     const handleEmptyValue = () =>{
         if(input?.value == ""){

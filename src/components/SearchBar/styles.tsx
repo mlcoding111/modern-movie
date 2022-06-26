@@ -9,7 +9,7 @@ export const SearchInput = styled.input`
     color: #fff;
     box-sizing: border-box;
     margin-right: auto;
-    width: 150px;
+    width: 250px;
     font-family: inherit;
     ::placeholder{
         color: #7378c5;
@@ -22,6 +22,6 @@ export const SearchInput = styled.input`
 
     @media screen and (max-width: 300px){
         padding: .2rem 1rem;
-        width: 150px;
+        width: 180px;
     }
 `
