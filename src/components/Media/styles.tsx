@@ -12,6 +12,7 @@ export const MovieCard = styled.div`
     background-color: var(--secondary-color);
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 
     img{
         width: 100%;
@@ -69,6 +70,11 @@ export const MovieCard = styled.div`
 
     :hover .overview{
     transform: translateY(0%);
+    }
+
+    @media (max-width: 30em){
+        margin: .5rem auto;
+        width: 84%;
     }
 
 `
