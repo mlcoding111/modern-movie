@@ -1,9 +1,10 @@
 import React from 'react'
-import { SearchInput } from './styles'
+import { SearchInput, Form } from './styles'
 import MediaService from '../../services/MediaService'
 import { useGlobalContext } from '../../global/MyGlobalContext'
-
 import {useLocation} from 'react-router-dom'
+
+import { IoIosSearch } from "react-icons/io";
 
 type Props = {}
 
@@ -42,9 +43,10 @@ const SearchBar = (props: Props) => {
     }
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)} onChange={handleEmptyValue}>
-              <SearchInput id="search"/>
-        </form>
+        <Form onSubmit={(e) => handleSubmit(e)} onChange={handleEmptyValue}>
+              <SearchInput id="search" placeholder='Search..'/>
+              <IoIosSearch id="search-icon" aria-hidden="true"/>
+        </Form>
 
     )
 }
